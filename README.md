@@ -1,7 +1,7 @@
 
 # PawPal
 
-A basic discord bot build with 
+A basic discord bot build using JDA 
 
 
 [![Stars](https://img.shields.io/github/stars/jagrosh/MusicBot.svg)](https://github.com/whyAsif/PawPal/stargazers)
