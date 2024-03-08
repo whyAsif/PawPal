@@ -15,21 +15,23 @@ public class Bot {
     private final Dotenv config;
     private final ShardManager shardManager;
 
-    public Bot() throws LoginException{
-        config= Dotenv.configure().load();
+    public Bot() throws LoginException {
+        config = Dotenv.configure().load();
         String token = config.get("TOKEN");
         DefaultShardManagerBuilder builder = DefaultShardManagerBuilder.createDefault(token);
         builder.setStatus(OnlineStatus.ONLINE);
         builder.setActivity(Activity.playing("Minecraft"));
-        builder.enableIntents(GatewayIntent.GUILD_MESSAGES,GatewayIntent.MESSAGE_CONTENT);
-        shardManager=builder.build();
+        builder.enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT);
+        shardManager = builder.build();
 
-        //Listeners
+        // Listeners
         shardManager.addEventListener(new EventListeners());
     }
-    public Dotenv getConfig(){
+
+    public Dotenv getConfig() {
         return config;
     }
+
     public ShardManager getShardManager() {
         return shardManager;
     }
